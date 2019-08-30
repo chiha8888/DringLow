@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+ <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" charset="utf-8">
+<script src="https://code.jquery.com/jquery-1.11.3.min.js"  charset="utf-8"></script>
+<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"  charset="utf-8"></script>
+</head>
+<body>
+<style>
+</style>
+<div data-role="page">
+  <div data-role="header">
+    <h1>Welcome To My Homepage</h1>
+  </div>
+
+  <div data-role="main" class="ui-content">
+    <a href="#myPopup" data-rel="popup"  data-position-to="window" class="ui-btn ui-btn-inline ui-corner-all ui-icon-check ui-btn-icon-left">Show Popup Form</a>
+
+    <div data-role="popup" id="myPopup"  class="ui-content" style="min-width:250px;margin: 0 auto;">
+      <form action="salebook.do" method="post" enctype="multipart/form-data">
+		物品名:<input type="text" name="name" value="" /><br>
+		物品價格:<input type="text" name="price" value="" /><br>
+		物品描述:<br>
+		<textarea name="describe" rows="10" cols="40"></textarea><br>
+		圖片1:<input type="file" name="pic1" value="" /><br>
+		圖片2:<input type="file" name="pic2" value="" /><br>
+		圖片3:<input type="file" name="pic3" value="" /><br>
+		
+		<input type="submit" name=upload value="上傳" />
+	 </form>
+    </div>
+  </div>
+
+  <div data-role="footer">
+    <h1>Footer Text</h1>
+  </div>
+</div> 
+<script>
+ </script>
+</body>
+</html>

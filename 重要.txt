@@ -1,0 +1,27 @@
+netstat -ano
+port:8005,8009,8080 可能會被占用，要關掉佔用他們的程式(PID)
+使用tomcat 8.0,jre 1.8.0_141
+解決path方法:
+https://stackoverflow.com/questions/17240708/implicit-super-constructor-object-is-undefined-must-explicitly-invoke-another
+
+sendRedirect() url不能用/
+dispatch() url可以用/
+https://ithelp.ithome.com.tw/articles/10185109
+
+servlet&jsp心得:
+https://ithelp.ithome.com.tw/users/20103425/ironman/1079?page=1
+
+appserv:
+http://blog.xuite.net/arcloveangel/lovestore/22930165-Appserv%E6%9E%B6%E7%AB%99%E6%95%99%E5%AD%B8-%E5%AE%8C%E6%95%B4%E5%AE%89%E8%A3%9D%E8%A8%AD%E5%AE%9A%E6%8C%87%E5%8D%97
+
+properties 路徑:
+http://fecbob.pixnet.net/blog/post/39322195-java%E7%8D%B2%E5%BE%97%E9%A0%85%E7%9B%AE%E7%B5%95%E5%B0%8D%E8%B7%AF%E5%BE%91
+
+setattribute & getattribute 問題:
+http://blog.csdn.net/ammmd/article/details/3990671
+
+常見錯誤:
+http://jjnnykimo.pixnet.net/blog/post/21585270-java%E5%B9%BE%E5%80%8B%E5%B8%B8%E8%A6%8B%E9%8C%AF%E8%AA%A4
+
+相對路徑:
+http://mitblog.pixnet.net/blog/post/24971111-%E4%BD%95%E8%AC%82%E7%B5%95%E5%B0%8D%E8%B7%AF%E5%BE%91%E8%88%87%E7%9B%B8%E5%B0%8D%E8%B7%AF%E5%BE%91%EF%BC%9F

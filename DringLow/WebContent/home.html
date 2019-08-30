@@ -1,0 +1,388 @@
+<html>
+
+<head>
+	<title>Home - DringLow</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" charset="utf-8"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" charset="utf-8"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.5/validator.min.js" charset="utf-8"></script>
+    <style>
+        .title {
+            margin: 0;
+            background: lightgrey;
+            // color: red;
+            border: 0;
+            //text-align: center;
+        }
+        
+        li:last-child {
+            border-right: none;
+        }
+        
+        .Horizontalitem {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 10px 15px;
+            text-decoration: none;
+        }
+        
+        .Horizontalitem:hover:not(.active) {
+            background-color: green;
+        }
+        
+        .active.Horizontalitem {
+            background-color: #4CAF50;
+        }
+        
+        .Horizontalbar {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            overflow: hidden;
+        }
+        
+        .Horizontalborder {
+            float: left;
+            border-right: 1px solid #bbb;
+        }
+        
+        .Verticalbar {
+            list-style-type: none;
+            background-color: #f1f1f1;
+            width: 150px;
+            margin-top: 20px;
+            padding: 0;
+            position: fixed;
+            overflow: auto;
+            float: left;
+        }
+        
+        .Verticalitem {
+            display: block;
+            color: #000;
+            padding: 8px 16px;
+            text-decoration: none;
+            text-align: center;
+        }
+        
+        .Verticalitem:hover:not(.active) {
+            background-color: #555;
+            color: white;
+        }
+        
+        .content {
+            //height: 600px;
+            width: 75%;
+            background-color: lightblue;
+            padding: 6px;
+            margin-left: 170px;
+            margin-top: 5px;
+            //overflow: auto;
+        }
+        
+        .inpf {
+            height: 100%;
+            width: 75%;
+            background-color: lightblue;
+            padding: 6px;
+            margin-left: 170px;
+            margin-top: 5px;
+        }
+        
+        .card {
+            background-color: white;
+            padding: 7px;
+            margin-top: 20px;
+            height: 100px;
+            overflow: hidden;
+        }
+        
+        .dropdown-content a {
+            background-color: #f9f9f9;
+            color: black;
+            padding: 8px 16px;
+            text-decoration: none;
+            display: none;
+            text-align: center;
+        }
+        
+        a:hover,
+        .dropdown:hover .dropbtn {
+            background-color: #555;
+            color: white;
+        }
+        
+        .dropdown-content a:hover {
+            background-color: #555;
+            color: white;
+            display: block;
+        }
+        
+        .dropdown:hover .dropdown-content a {
+            display: block;
+        }
+        
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        
+        .sellbutton {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+        
+        h1,
+        h2 {
+            display: inline-block;
+        }
+        
+        .form-body {
+            background: #fff;
+            padding: 20px;
+        }
+        
+        .login-form {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-top: 3px solid#3e4043;
+        }
+        
+        .innter-form {
+            padding-top: 20px;
+        }
+        
+        .final-login li {
+            width: 50%;
+        }
+        
+        .nav-tabs {
+            border-bottom: none !important;
+        }
+        
+        .nav-tabs>li {
+            color: #222 !important;
+        }
+        
+        .nav-tabs>li.active>a,
+        .nav-tabs>li.active>a:hover,
+        .nav-tabs>li.active>a:focus {
+            color: #fff;
+            background-color: #d14d42;
+            border: none !important;
+            border-bottom-color: transparent;
+            border-radius: none !important;
+        }
+        
+        .nav-tabs>li>a {
+            margin-right: 2px;
+            line-height: 1.428571429;
+            border: none !important;
+            border-radius: none !important;
+            text-transform: uppercase;
+            font-size: 16px;
+        }
+        
+        .social-login {
+            text-align: center;
+            font-size: 12px;
+        }
+        
+        .social-login p {
+            margin: 15px 0;
+        }
+        
+        .social-login ul {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
+        
+        .social-login ul li {
+            width: 33%;
+            float: left;
+            clear: fix;
+        }
+        
+        .social-login ul li a {
+            font-size: 13px;
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 0;
+            display: block;
+        }
+        
+        .social-login ul li:nth-child(1) a {
+            background: #3b5998;
+        }
+        
+        .social-login ul li:nth-child(2) a {
+            background: #e74c3d;
+        }
+        
+        .social-login ul li:nth-child(3) a {
+            background: #3698d9;
+        }
+        
+        .sa-innate-form input[type=text],
+        input[type=password],
+        input[type=file],
+        textarea,
+        select,
+        email {
+            font-size: 13px;
+            padding: 10px;
+            border: 1px solid#ccc;
+            outline: none;
+            width: 100%;
+            margin: 8px 0;
+        }
+        
+        .sa-innate-form input[type=submit] {
+            border: 1px solid#e64b3b;
+            background: #e64b3b;
+            color: #fff;
+            padding: 10px 25px;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+        
+        .sa-innate-form input[type=submit]:hover {
+            border: 1px solid#db3b2b;
+            background: #db3b2b;
+            color: #fff;
+        }
+        
+        .sa-innate-form button {
+            border: 1px solid#e64b3b;
+            background: #e64b3b;
+            color: #fff;
+            padding: 10px 25px;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+        
+        .sa-innate-form button:hover {
+            border: 1px solid#db3b2b;
+            background: #db3b2b;
+            color: #fff;
+        }
+        
+        .sa-innate-form p {
+            font-size: 13px;
+            padding-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 class="title">DringLow</h1>
+    <ul class="Horizontalbar">
+        <li class="Horizontalborder"><a class="Horizontalitem" href="home.html">Home</a></li>
+        <li class="Horizontalborder"><a class="Horizontalitem" href="course">課程評價</a></li>
+        <li class="Horizontalborder"><a class="Horizontalitem" href="book">二手書</a></li>
+        <li class="Horizontalborder"><a class="Horizontalitem" href="stuff">新舊物品</a></li>
+        <li class="Horizontalborder"><a class="Horizontalitem" href="gossip">聊天</a></li>
+    </ul>
+    <div class="container center-block" style="width:80%">
+		
+				<img class ="center-block" src="https://i.imgur.com/KDehiBq.png"\>
+				<h1 style="position:fixed" ><span class="btn label label-default" onclick="window.location.href='https://fatew.com/'" >Visit our shop! :) </span></h1>
+
+				<img class ="center-block" src="https://i.imgur.com/l0agY55.png"\>
+				<img class ="center-block" src="https://i.imgur.com/nZTav6B.png"\>
+    </div>
+    <!-- login Modal -->
+    <div class="modal fade" id="loginModal"  role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title" id="curtitle">登入</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-body" style="display:block">
+                        <ul class="nav nav-tabs final-login">
+                            <li class="active"><a data-toggle="tab" href="#sectionA">登入</a></li>
+                            <li><a data-toggle="tab" href="#sectionB">註冊</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <div id="sectionA" class="tab-pane fade in active">
+                                <div class="innter-form">
+                                    <form class="sa-innate-form" method="post" id="loginform" data-toggle="validator" role="form" action="login.do">
+                                        <div class="form-group">
+                                            <label for="inputEmail" class="control-label">Email</label>
+                                            <input type="email" name="email" class="form-control" id="inputEmail" placeholder="Email" required>
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="inputPassword" class="control-label">密碼</label>
+                                            <div class="form-group">
+                                                <input type="password" name="password" class="form-control" data-minlength="6" maxlength="16" id="inputPassword" placeholder="Password" required>
+                                                <div class="help-block"></div>
+                                            </div>
+                                        </div>
+                                        <button type="submit">登入</button>
+                                    </form>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div id="sectionB" class="tab-pane fade">
+                                <div class="innter-form">
+                                    <form class="sa-innate-form" method="post" id="signinform" data-toggle="validator" role="form" action="register.do">
+                                        <div class="form-group">
+                                            <label for="inputEmail2" class="control-label">Email</label>
+                                            <input type="email" name="email" class="form-control" id="inputEmail2" placeholder="Email" required>
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="inputPassword2" class="control-label">密碼</label>
+                                            <div class="form-group">
+                                                <input type="password" name="password" class="form-control" data-minlength="6" maxlength="16" id="inputPassword2" placeholder="Password" required>
+                                                <div class="help-block">6~16字</div>
+                                            </div>
+                                            <label for="inputPasswordConfirm" class="control-label">請再次輸入密碼</label>
+                                            <div class="form-group">
+                                                <input type="password" name="confirmedpassword" class="form-control" id="inputPasswordConfirm" maxlength="16" data-match="#inputPassword2" data-match-error="兩次輸入密碼不同" placeholder="Confirm" required>
+                                                <div class="help-block with-errors"></div>
+                                            </div>
+                                        </div>
+                                        <button type="submit">註冊</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- login Modal end -->
+</body>
+<script>
+    $(document).ready(function() {
+        $("a.Horizontalitem").click(function(event) {
+            var item = this;
+            if (item.textContent == 'Sign in')
+                $("#loginModal").modal();
+        });
+
+    });
+</script>
+
+</html>
